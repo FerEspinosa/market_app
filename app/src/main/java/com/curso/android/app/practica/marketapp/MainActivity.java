@@ -1,6 +1,8 @@
 package com.curso.android.app.practica.marketapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ItemClickListener {
 
     //AdapterView: RecyclerView
     RecyclerView recyclerView;
@@ -57,7 +59,14 @@ public class MainActivity extends AppCompatActivity {
         // Set Layout Manager
         recyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(this));
 
+        // link adapter to ClickListener
+        adapter.setClickListener(this);
 
+    }
 
+    @Override
+    public void onClick(View v, int pos) {
+        String clickedItem = items.get(pos).getItemName();
+        Toast.makeText(this, "You have clicked on " + clickedItem, Toast.LENGTH_SHORT).show();
     }
 }

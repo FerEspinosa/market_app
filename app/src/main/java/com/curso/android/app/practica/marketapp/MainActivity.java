@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-// added this comment just to make a change to commit
+
 public class MainActivity extends AppCompatActivity {
 
     //AdapterView: RecyclerView
